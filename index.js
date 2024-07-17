@@ -17,7 +17,23 @@ app.get('/', async (req, res) => {
 });
 
 app.get('/api/v1/articles', async (req, res) => {
-  res.send({ msg: 'Welcome', status: 200 });
+  let response = null;
+  try {
+    const data = await ArticleModel.find();
+    const totalItems = await ArticleModel.countDocuments();
+
+    response = {
+      msg: 'Ok',
+      data,
+      totalItems,
+    };
+
+    return res.status(200).json(response);
+  } catch (error) {
+    return res.status(500).json({
+      msg: error.message,
+    });
+  }
 });
 
 app.post('/api/v1/articles', async (req, res) => {
