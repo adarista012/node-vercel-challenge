@@ -35,7 +35,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/api/v1/articles', async (req, res) => {
-  'hello world';
+  res.send('Hello vercel');
 });
 
 app.use(express.json());
