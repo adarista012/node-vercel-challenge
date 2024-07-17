@@ -1,8 +1,9 @@
 const express = require('express');
 
 const app = express();
+app.use(express.json());
 
-// require('dotenv').config();
+require('dotenv').config();
 
 const run = require('./connectMongo');
 
