@@ -9,7 +9,7 @@ const run = require('./connectMongo');
 run().catch(console.dir);
 
 app.get('/api/v1/articles', async (req, res) => {
-  res.send('Hello vercel');
+  res.send('Vercel Server');
 });
 
 app.use(express.json());
