@@ -14,7 +14,7 @@ app.get('/api/v1/articles', async (req, res) => {
   res.send({ msg: 200 });
 });
 
-app.post('/api/v1/books', async (req, res) => {
+app.post('/api/v1/articles', async (req, res) => {
   try {
     const { title, author, content } = req.body;
     const article = new ArticleModel({
