@@ -34,6 +34,10 @@ async function run() {
 }
 run().catch(console.dir);
 
+app.get('/api/v1/articles', async (req, res) => {
+  'hello world';
+});
+
 app.use(express.json());
 
 // const BookModel = require('./models/book.model');
