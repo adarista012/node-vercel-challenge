@@ -12,7 +12,7 @@ run().catch(console.dir);
 const ArticleModel = require('./models/article.model');
 
 app.get('/api/v1/articles', async (req, res) => {
-  res.send({ msg: 200 });
+  res.send({ msg: 'Welcome', status: 200 });
 });
 
 app.post('/api/v1/articles', async (req, res) => {
