@@ -1,15 +1,20 @@
 const express = require('express');
 
 const app = express();
+
 app.use(express.json());
 
 require('dotenv').config();
 
-const run = require('./connectMongo');
+const connectDB = require('./connectMongo');
 
-run().catch(console.dir);
+connectDB();
 
 const ArticleModel = require('./models/article.model');
+
+app.get('/', async (req, res) => {
+  res.send('FullStack Challenge');
+});
 
 app.get('/api/v1/articles', async (req, res) => {
   res.send({ msg: 'Welcome', status: 200 });
