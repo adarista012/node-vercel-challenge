@@ -8,8 +8,9 @@ const app = express();
 
 // connectDB();
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const uri =
-  'mongodb+srv://adarista012:tBVZzsJg7JNkpvrO@articles.y1y1gpx.mongodb.net/?retryWrites=true&w=majority&appName=Articles';
+
+const uri = process.env.MONGODB_CONNECT_URI;
+
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 const client = new MongoClient(uri, {
   serverApi: {
@@ -186,7 +187,7 @@ app.use(express.json());
 //   }
 // });
 
-const PORT = 8000;
+const PORT = process.env.PORT;
 
 app.listen(PORT, () => {
   console.log('Server is running on port ' + PORT);
